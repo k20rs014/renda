@@ -37,13 +37,14 @@ function startGame() {
 }
 
 // 【mBaaS】データの保存
-function saveScore (name, score) {
+function saveScore (name, score, speed) {
     // **********【問題１】名前とスコアを保存しよう！**********
     
     var GameScore = ncmb.DataStore("GameScore");
     var gameScore = new GameScore();
     gameScore.set("name", name);
     gameScore.set("score", score);
+    gameScore.set("speed", speed);
     gameScore.save()
     .then(function (){
       console.log("保存に成功しました。");
@@ -86,9 +87,10 @@ function imputName(count){
         $("#list-page p").html("保存がキャンセルされました");        
     } else {
         // スコアと入力した名前を保存
-        saveScore(name, count);
+        var speed = String(count) / 10;
+        saveScore(name, count, speed);
         $("#list-page p").html(name + "さんのスコアは" + String(count) + "連打<br>連打速度は" +
-          String(count) / 10 + "打/sです。");
+          speed + "打/sです。");
     }
     // ボタンの有効化
     document.gameForm.start.disabled = false;
