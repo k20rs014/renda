@@ -87,7 +87,8 @@ function imputName(count){
     } else {
         // スコアと入力した名前を保存
         saveScore(name, count);
-        $("#list-page p").html(name + "さんのスコアは" + String(count) + "連打でした"); 
+        $("#list-page p").html(name + "さんのスコアは" + String(count) + "連打<br>連打速度は" +
+          String(count) / 10 + "打/sです。");
     }
     // ボタンの有効化
     document.gameForm.start.disabled = false;
@@ -99,7 +100,7 @@ function tapCount() {
     if (tapFlag) {
         this.counter += 1;
         this.countdown -= 1;
-        $("#list-page strong").html(String(this.counter));
-        $("#list-page strong").html(String(this.countdown));
+        //$("#list-page strong").html(String(this.counter));
+        $("#list-page strong").html(String(this.countdown)); //100からカウント
     }
 }
