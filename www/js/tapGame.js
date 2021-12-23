@@ -16,7 +16,7 @@ var ncmb = new NCMB(this.APPLICATION_KEY, this.CLIENT_KEY);
 var countTimer = 13;
 // タップ回数カウンター
 var counter = 0;
-var countdown = 100;
+var countdown = 200;
 // 「tapFlag」的のタップ可否設定
 var tapFlag = false;
 
@@ -28,7 +28,7 @@ function startGame() {
     
     // タップカウンターリセット
     this.counter = 0;
-    this.countdown = 100;
+    this.countdown = 200;
     $("#list-page strong").html(String(0));
     // タイマーリセット
     this.countTimer = 13;
