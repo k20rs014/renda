@@ -103,6 +103,6 @@ function tapCount() {
         this.counter += 1;
         this.countdown -= 1;
         //$("#list-page strong").html(String(this.counter));
-        $("#list-page strong").html(String(this.countdown)); //100からカウント
+        $("#list-page strong").html(String(this.counter)); //100からカウント
     }
 }
